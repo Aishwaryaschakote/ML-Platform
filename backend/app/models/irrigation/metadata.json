@@ -1,0 +1,9 @@
+{
+  "project_name": "irrigation",
+  "best_model": "xgboost",
+  "metrics": {
+    "accuracy": 0.98,
+    "f1_score": 0.97
+  },
+  "last_updated": "2026-03-28"
+}

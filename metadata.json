@@ -1,0 +1,5 @@
+{
+  "name": "ML Platform Explorer",
+  "description": "A scalable multi-project machine learning platform with dynamic routing and project configuration.",
+  "requestFramePermissions": []
+}
