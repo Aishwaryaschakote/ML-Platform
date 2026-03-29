@@ -1,11 +1,15 @@
-import axios from "axios";
+export async function predictIrrigation(data: any) {
+  const res = await fetch("http://127.0.0.1:8000/api/irrigation", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
 
-export const predict = async (endpoint: string, data: any) => {
-  try {
-    const response = await axios.post(endpoint, data);
-    return response.data;
-  } catch (error) {
-    console.error("API Error:", error);
-    throw error;
+  if (!res.ok) {
+    throw new Error("API Error");
   }
-};
+
+  return res.json();
+}

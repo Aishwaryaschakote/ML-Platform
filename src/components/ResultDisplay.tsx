@@ -1,21 +1,19 @@
-import React from "react";
+export default function ResultDisplay({ result }: any) {
+  if (!result) return null;
 
-interface ResultDisplayProps {
-  finalValue: number | string;
-  status: string;
-  label: string;
-}
-
-export const ResultDisplay: React.FC<ResultDisplayProps> = ({ finalValue, status, label }) => {
   return (
-    <div className="bg-blue-50 p-6 rounded-2xl border-2 border-blue-200 text-center">
-      <h3 className="text-lg font-bold text-blue-800 mb-2">{label}</h3>
-      <div className="text-5xl font-black text-blue-600 mb-4">{finalValue}</div>
-      <div className={`inline-block px-6 py-2 rounded-full font-bold text-white ${
-        status === "ON" ? "bg-green-500" : "bg-red-500"
-      }`}>
-        Status: {status}
-      </div>
+    <div style={{ marginTop: "20px" }}>
+      <h3>📊 Prediction Results</h3>
+
+      <p><b>Final Prediction:</b> {result.final_prediction}</p>
+      <p><b>Motor:</b> {result.motor}</p>
+      <p><b>Confidence:</b> {result.confidence}</p>
+      <p><b>Agreement:</b> {result.agreement}</p>
+
+      <h4>🤖 Model Outputs</h4>
+      <p>Linear: {result.models.linear}</p>
+      <p>Random Forest: {result.models.rf}</p>
+      <p>XGBoost: {result.models.xgb}</p>
     </div>
   );
-};
+}
