@@ -34,21 +34,26 @@ export default function InputForm({ onResult }: any) {
   };
 
   return (
-    <div>
-      <h2>🌾 Irrigation Prediction</h2>
+    <div className="bg-white p-6 rounded-2xl shadow-lg border">
+      <h2 className="text-xl font-bold mb-4">🌾 Smart Irrigation Prediction</h2>
 
-      {/* Example format */}
-      <div style={{ marginBottom: "10px", color: "gray" }}>
-        <b>Example:</b> Soil_Type = Loamy, Soil_Moisture = 25, Temperature = 32
+      <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm">
+        <b>Example:</b> Soil Moisture = 25, Temperature = 32°C, Humidity = 60%
       </div>
 
-      {/* Few important inputs */}
-      <input name="Soil_Moisture" placeholder="Soil Moisture" onChange={handleChange} />
-      <input name="Temperature_C" placeholder="Temperature" onChange={handleChange} />
-      <input name="Humidity" placeholder="Humidity" onChange={handleChange} />
-      <input name="Rainfall_mm" placeholder="Rainfall" onChange={handleChange} />
+      <div className="grid grid-cols-2 gap-4">
+        <input className="input" name="Soil_Moisture" placeholder="Soil Moisture" onChange={handleChange} />
+        <input className="input" name="Temperature_C" placeholder="Temperature (°C)" onChange={handleChange} />
+        <input className="input" name="Humidity" placeholder="Humidity (%)" onChange={handleChange} />
+        <input className="input" name="Rainfall_mm" placeholder="Rainfall (mm)" onChange={handleChange} />
+      </div>
 
-      <button onClick={handleSubmit}>Predict</button>
+      <button
+        onClick={handleSubmit}
+        className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold"
+      >
+        🚀 Predict
+      </button>
     </div>
   );
 }
