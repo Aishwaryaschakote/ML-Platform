@@ -5,7 +5,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home.tsx";
-import { ProjectPage } from "./pages/ProjectPage.tsx";
+import ProjectPage from "./pages/ProjectPage.tsx";
 
 export default function App() {
   return (
